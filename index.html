@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Basemap with labels</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"
+    integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
+    crossorigin=""></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 49px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left"> 
+      <a href="index.html">
+      <img   object-fit: scale-down; alt="Hello" src="AGRI FI LOGO_transparent.png" width="30px" height="30px"></a>
+      <a class = "active"href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="right">
+      <a href="#about">Sign Up</a>
+      <a href="#about">Log In</a>
+
+    </div>
+  </div>
+  <div id="map"></div>
+
+  <script>
+    var map = L.map('map').setView([19.322791, 84.855872], 17.49999999999);
+
+    L.esri.basemapLayer('Imagery').addTo(map);
+    L.esri.basemapLayer('ImageryLabels').addTo(map);
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyA-sP3EA7ags2caHN65Usgv8Jh4rXlvOUo",
+      authDomain: "agrifi.firebaseapp.com",
+      databaseURL: "https://agrifi-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "agrifi",
+      storageBucket: "agrifi.appspot.com",
+      messagingSenderId: "167042770341",
+      appId: "1:167042770341:web:f38736c0098c491ceab44c",
+      measurementId: "G-HHJQREW58K"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  </script>
+  <!-- Firebase scripts here  -->
+</body>
+
+</html>
